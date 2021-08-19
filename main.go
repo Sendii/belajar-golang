@@ -96,6 +96,38 @@ type student struct {
 	kelas int
 }
 
+type person_alamat struct {
+	provinsi string
+	kota string
+}
+
+type person struct {
+	nama string
+	jenkel string
+	provinsi string
+	person_alamat //embed another struct
+}
+
+func callStudentStruct3(){
+	var p1 		= person{}
+	p1.nama 	= "Sendi Hadi"
+	p1.jenkel 	= "L"
+	p1.provinsi = "DKI Jakarta"
+	p1.person_alamat.provinsi = "DKI Jakarta 2"
+	p1.kota 	= "Jakarta Timur"
+	fmt.Println("Nama :", p1.nama)
+	fmt.Println("Provinsi :", p1.provinsi)
+	fmt.Println("Provinsi 2:", p1.person_alamat.provinsi)
+	fmt.Println("Kota :", p1.kota)
+}
+
+func callStudentStruct4(){
+	var sub_alamat = person_alamat{provinsi: "Jawa Timur", kota: "Kediri"}
+	var p1 		   = person{nama: "Sendi sub", jenkel: "L", provinsi: "Provinsi 1", person_alamat: sub_alamat}
+	fmt.Println("Nama anda ", p1.nama)
+	fmt.Println("Sub alamat provinsi anda ", p1.person_alamat.provinsi)
+	fmt.Println("Sub alamat kota anda ", p1.person_alamat.kota)
+}
 func callStudentStruct1(){
 	//penerapan struct
 	var s1 student
@@ -130,5 +162,7 @@ func main(){
     // printMessage([]string{"John", "Doe"}, "RPL")
 	// callPointer()
 	// callStudentStruct1()
-	callStudentStruct2()
+	// callStudentStruct2()
+	// callStudentStruct3()
+	callStudentStruct4()
 }
