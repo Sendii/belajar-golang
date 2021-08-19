@@ -85,6 +85,41 @@ func callPointer(){
 	fmt.Println("Nilai Pointer nya :", *pointerNama)
 }
 
+func printMessage(arr []string, kelas string) {
+    var nameString = strings.Join(arr, " ")
+    fmt.Println(nameString, kelas)
+}
+
+// struct
+type student struct {
+	nama string
+	kelas int
+}
+
+func callStudentStruct1(){
+	//penerapan struct
+	var s1 student
+	s1.nama  = "Sendi Hadi"
+	s1.kelas = 10
+
+	fmt.Println("Nama anda adalah", s1.nama)
+	fmt.Println("Kelas anda adalah", s1.kelas)
+}
+
+func callStudentStruct2(){
+	//cara-cara inisialisasi struct
+	var s1   = student{}
+	s1.nama  = "Sendi"
+	s1.kelas = 10
+
+	var s2 = student{"Sendi 2", 10}
+	var s3 = student{nama: "Sendi 3"}
+
+	fmt.Println("Student 1", s1.nama)
+	fmt.Println("Student 2", s2.nama)
+	fmt.Println("Student 3", s3.nama)
+}
+
 func main(){	
 	// callString()
 	// callIf(80)
@@ -93,10 +128,7 @@ func main(){
 	// callArrayMultidimensional()
 	// callMapMonth()
     // printMessage([]string{"John", "Doe"}, "RPL")
-	callPointer()
-}
-
-func printMessage(arr []string, kelas string) {
-    var nameString = strings.Join(arr, " ")
-    fmt.Println(nameString, kelas)
+	// callPointer()
+	// callStudentStruct1()
+	callStudentStruct2()
 }
