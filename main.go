@@ -128,6 +128,24 @@ func callStudentStruct4(){
 	fmt.Println("Sub alamat provinsi anda ", p1.person_alamat.provinsi)
 	fmt.Println("Sub alamat kota anda ", p1.person_alamat.kota)
 }
+
+func callStudentStruct5(){
+	//kombinasi slice dan struct
+	var alamat = person_alamat{provinsi: "Jawa Timur", kota: "Kediri"}
+	var allPersons = []person{
+		{nama: "Sendi Hadi", jenkel: "L", provinsi: "DKI Jakarta", person_alamat: alamat},
+		{nama: "Sendi Hadi 2", jenkel: "L", provinsi: "DKI Jakarta 2", person_alamat : alamat},
+	}
+
+	for _, p := range allPersons {
+		fmt.Println("nama 	:", p.nama)
+		fmt.Println("jenkel :", p.jenkel)
+		fmt.Println("provinsi :", p.provinsi)
+		fmt.Println("alamat Provinsi :", p.person_alamat.provinsi)
+		fmt.Println("alamat Kota :", p.person_alamat.kota)
+		fmt.Println("===================================")
+	}
+}
 func callStudentStruct1(){
 	//penerapan struct
 	var s1 student
@@ -164,5 +182,6 @@ func main(){
 	// callStudentStruct1()
 	// callStudentStruct2()
 	// callStudentStruct3()
-	callStudentStruct4()
+	// callStudentStruct4()
+	callStudentStruct5()
 }
