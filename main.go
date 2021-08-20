@@ -108,46 +108,6 @@ type person struct {
 	person_alamat //embed another struct
 }
 
-func callStudentStruct3(){
-	//akses struct dengan property yang sama, tapi beda struct
-	var p1 		= person{}
-	p1.nama 	= "Sendi Hadi"
-	p1.jenkel 	= "L"
-	p1.provinsi = "DKI Jakarta"
-	p1.person_alamat.provinsi = "DKI Jakarta 2"
-	p1.kota 	= "Jakarta Timur"
-	fmt.Println("Nama :", p1.nama)
-	fmt.Println("Provinsi :", p1.provinsi)
-	fmt.Println("Provinsi 2:", p1.person_alamat.provinsi)
-	fmt.Println("Kota :", p1.kota)
-}
-
-func callStudentStruct4(){
-	// masukkan struct ke dalam struct lain
-	var sub_alamat = person_alamat{provinsi: "Jawa Timur", kota: "Kediri"}
-	var p1 		   = person{nama: "Sendi sub", jenkel: "L", provinsi: "Provinsi 1", person_alamat: sub_alamat}
-	fmt.Println("Nama anda ", p1.nama)
-	fmt.Println("Sub alamat provinsi anda ", p1.person_alamat.provinsi)
-	fmt.Println("Sub alamat kota anda ", p1.person_alamat.kota)
-}
-
-func callStudentStruct5(){
-	//kombinasi slice dan struct
-	var alamat = person_alamat{provinsi: "Jawa Timur", kota: "Kediri"}
-	var allPersons = []person{
-		{nama: "Sendi Hadi", jenkel: "L", provinsi: "DKI Jakarta", person_alamat: alamat},
-		{nama: "Sendi Hadi 2", jenkel: "L", provinsi: "DKI Jakarta 2", person_alamat : alamat},
-	}
-
-	for _, p := range allPersons {
-		fmt.Println("nama 	:", p.nama)
-		fmt.Println("jenkel :", p.jenkel)
-		fmt.Println("provinsi :", p.provinsi)
-		fmt.Println("alamat Provinsi :", p.person_alamat.provinsi)
-		fmt.Println("alamat Kota :", p.person_alamat.kota)
-		fmt.Println("===================================")
-	}
-}
 func callStudentStruct1(){
 	//penerapan struct
 	var s1 student
@@ -172,6 +132,60 @@ func callStudentStruct2(){
 	fmt.Println("Student 3", s3.nama)
 }
 
+func callPersonStruct3(){
+	//akses struct dengan property yang sama, tapi beda struct
+	var p1 		= person{}
+	p1.nama 	= "Sendi Hadi"
+	p1.jenkel 	= "L"
+	p1.provinsi = "DKI Jakarta"
+	p1.person_alamat.provinsi = "DKI Jakarta 2"
+	p1.kota 	= "Jakarta Timur"
+	fmt.Println("Nama :", p1.nama)
+	fmt.Println("Provinsi :", p1.provinsi)
+	fmt.Println("Provinsi 2:", p1.person_alamat.provinsi)
+	fmt.Println("Kota :", p1.kota)
+}
+
+func callPersonStruct4(){
+	// masukkan struct ke dalam struct lain
+	var sub_alamat = person_alamat{provinsi: "Jawa Timur", kota: "Kediri"}
+	var p1 		   = person{nama: "Sendi sub", jenkel: "L", provinsi: "Provinsi 1", person_alamat: sub_alamat}
+	fmt.Println("Nama anda ", p1.nama)
+	fmt.Println("Sub alamat provinsi anda ", p1.person_alamat.provinsi)
+	fmt.Println("Sub alamat kota anda ", p1.person_alamat.kota)
+}
+
+func callPersonStruct5(){
+	//kombinasi slice dan struct
+	var alamat = person_alamat{provinsi: "Jawa Timur", kota: "Kediri"}
+	var allPersons = []person{
+		{nama: "Sendi Hadi", jenkel: "L", provinsi: "DKI Jakarta", person_alamat: alamat},
+		{nama: "Sendi Hadi 2", jenkel: "L", provinsi: "DKI Jakarta 2", person_alamat : alamat},
+	}
+
+	for _, p := range allPersons {
+		fmt.Println("nama 	:", p.nama)
+		fmt.Println("jenkel :", p.jenkel)
+		fmt.Println("provinsi :", p.provinsi)
+		fmt.Println("alamat Provinsi :", p.person_alamat.provinsi)
+		fmt.Println("alamat Kota :", p.person_alamat.kota)
+		fmt.Println("===================================")
+	}
+}
+
+type func_student struct {
+	nama string
+	kelas string
+}
+
+func (s func_student) methodSayHello(){
+	fmt.Println("Haloo :", s.nama)
+}
+
+func (s func_student) methodetNameAt(i int) string{
+	return strings.Split(s.name, " ")[i-1]
+}
+
 func main(){	
 	// callString()
 	// callIf(80)
@@ -183,7 +197,11 @@ func main(){
 	// callPointer()
 	// callStudentStruct1()
 	// callStudentStruct2()
-	// callStudentStruct3()
-	// callStudentStruct4()
-	callStudentStruct5()
+	// callPersonStruct3()
+	// callPersonStruct4()
+	// callPersonStruct5()
+	var s1 = func_student{"Sendi Wijaya"}
+	s1.methodSayHello()
+
+	fmt.Println("nama panggilan", s1.methodetNameAt(2))
 }
