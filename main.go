@@ -109,6 +109,7 @@ type person struct {
 }
 
 func callStudentStruct3(){
+	//akses struct dengan property yang sama, tapi beda struct
 	var p1 		= person{}
 	p1.nama 	= "Sendi Hadi"
 	p1.jenkel 	= "L"
@@ -122,6 +123,7 @@ func callStudentStruct3(){
 }
 
 func callStudentStruct4(){
+	// masukkan struct ke dalam struct lain
 	var sub_alamat = person_alamat{provinsi: "Jawa Timur", kota: "Kediri"}
 	var p1 		   = person{nama: "Sendi sub", jenkel: "L", provinsi: "Provinsi 1", person_alamat: sub_alamat}
 	fmt.Println("Nama anda ", p1.nama)
