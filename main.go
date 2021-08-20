@@ -186,6 +186,16 @@ func (s func_student) methodetGetNameAt(i int) string{
 	return strings.Split(s.nama, " ")[i-1]
 }
 
+func (s func_student) methodChangeName1(nama string){
+	fmt.Println("---> on Changename1, name changed to", nama)
+	s.nama = nama
+}
+
+func (s *func_student) methodChangeName2(nama string){
+	fmt.Println("---> on Changename1, name changed to", nama)
+	s.nama = nama
+}
+
 func main(){	
 	// callString()
 	// callIf(80)
@@ -200,8 +210,14 @@ func main(){
 	// callPersonStruct3()
 	// callPersonStruct4()
 	// callPersonStruct5()
-	var s1 = func_student{"Sendi Wijaya", "RPL"}
-	s1.methodSayHello()
+	var s1 = func_student{"Sendi Awal", "RPL"}
+	fmt.Println("s1 before", s1.nama)
+	fmt.Println("=================================================")
 
-	fmt.Println("nama panggilan :", s1.methodetGetNameAt(2))
+	s1.methodChangeName1("Sendi 1")
+	fmt.Println("s1 after changename1", s1.nama)
+	fmt.Println("=================================================")
+
+	s1.methodChangeName2("Sendi 2")
+	fmt.Println("s1 after changename2", s1.nama)
 }
