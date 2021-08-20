@@ -3,18 +3,8 @@ package main
 import ("fmt"
 	"strings"
 	lib "belajar/library"
+	str "belajar/materi/string"
 )
-
-func callString(){
-	var firstName string = "John"
-	lastName := "Doe" //kalo set variable pertama bisa pake :=
-	lastName = "Doe baru"
-
-	a, b, c := "A", "B", 90
-	fmt.Printf("Halooo %s %s!\n", firstName, lastName)
-	fmt.Println("halo", firstName, lastName + "!")
-	fmt.Println("haloo", a, b, c)
-}
 
 func callIf(numb int8){
 	point := numb
@@ -225,6 +215,8 @@ func main(){
 	// fmt.Println("s1 after changename2", s1.nama)
 	// end struct
 
-	lib.SayHello()
-	lib.Introduce("sendi")
+	// lib.SayHello()
+	// lib.Introduce("sendi")
+
+	str.CallString()
 }
