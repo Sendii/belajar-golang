@@ -182,7 +182,7 @@ func (s func_student) methodSayHello(){
 	fmt.Println("Haloo :", s.nama)
 }
 
-func (s func_student) methodetNameAt(i int) string{
+func (s func_student) methodetGetNameAt(i int) string{
 	return strings.Split(s.nama, " ")[i-1]
 }
 
@@ -203,5 +203,5 @@ func main(){
 	var s1 = func_student{"Sendi Wijaya", "RPL"}
 	s1.methodSayHello()
 
-	fmt.Println("nama panggilan :", s1.methodetNameAt(3))
+	fmt.Println("nama panggilan :", s1.methodetGetNameAt(2))
 }
