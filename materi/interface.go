@@ -2,6 +2,7 @@ package materi
 
 import (
 	"math"
+	"fmt"
 )
 
 type rumus interface{
@@ -48,4 +49,25 @@ func (p Persegi) Keliling() float64{
 
 func (p Persegi) Total() float64 {
 	return p.Keliling() + p.Luas()
+}
+
+var intPerson = []map[string]interface{}{
+	{
+		"nama": "Sendi Dian",
+		"umur": 20,
+	},
+	{
+		"nama": "Rizky",
+		"umur": 21,
+	},
+	{
+		"nama": "Amar",
+		"umur": 22,
+	},
+}
+
+func GetInterfacePerson(){
+	for _, p := range intPerson{
+		fmt.Println("Nama anda adalah :", p["nama"], "dan umur anda :", p["umur"])
+	}
 }

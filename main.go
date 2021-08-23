@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	mat "belajar/materi"
 )
 
@@ -37,19 +37,23 @@ func main(){
 	// CallFuncRoot("Sendi")
 
 	// ========================= INTERFACE ==========================
-	var bangunDatar mat.Hitung
-	bangunDatar = mat.Persegi{10.0}
-	fmt.Println("=== Persegi :")
-	fmt.Println("Luas :", bangunDatar.Luas())
-	fmt.Println("Keliling :", bangunDatar.Keliling())
-	fmt.Println("Total :", bangunDatar.Total())
-	fmt.Println("=================== :")
+	// var bangunDatar mat.Hitung
+	// bangunDatar = mat.Persegi{10.0}
+	// fmt.Println("=== Persegi :")
+	// fmt.Println("Luas :", bangunDatar.Luas())
+	// fmt.Println("Keliling :", bangunDatar.Keliling())
+	// fmt.Println("Total :", bangunDatar.Total())
+	// fmt.Println("=================== :")
 
-	bangunDatar = mat.Lingkaran{14.0}
-	fmt.Println("=== Lingkaran :")
-	fmt.Println("Jari-jari :", bangunDatar.(mat.Lingkaran).JariJari())
-	fmt.Println("Luas :", bangunDatar.Luas())
-	fmt.Println("Keliling :", bangunDatar.Keliling())	
-	fmt.Println("Total :", bangunDatar.Total())
+	// bangunDatar = mat.Lingkaran{14.0}
+	// fmt.Println("=== Lingkaran :")
+	// fmt.Println("Jari-jari :", bangunDatar.(mat.Lingkaran).JariJari())
+	// fmt.Println("Luas :", bangunDatar.Luas())
+	// fmt.Println("Keliling :", bangunDatar.Keliling())	
+	// fmt.Println("Total :", bangunDatar.Total())
+
+
+	// INTERFACE KOSONG
+	mat.GetInterfacePerson()
 	// =========================== END ==============================
 }
