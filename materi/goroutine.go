@@ -57,6 +57,7 @@ func GoRoutChannelParam(){
 	var total = 0
 	for _, nama := range []string{"sendi", "dian", "hadiwijaya"}{
 		total += 1
+		
 		go sayHelloToParam(nama)
 	}
 
