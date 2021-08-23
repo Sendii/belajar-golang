@@ -54,6 +54,11 @@ func main(){
 
 
 	// INTERFACE KOSONG
-	mat.GetInterfacePerson()
+	// mat.GetInterfacePerson()
 	// =========================== END ==============================
+
+	// ========================= REFLECT ============================
+	mat.GetReflectKeyValue()
+	// =========================== END ==============================
+
 }
