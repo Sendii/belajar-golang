@@ -2,7 +2,6 @@ package main
 
 import ("fmt"
 	"strings"
-	lib "belajar/library"
 	mat "belajar/materi"
 )
 
@@ -45,9 +44,9 @@ func main(){
 	// mat.CallPersonStruct5()
 
 	// start struct
-	// var s1 = func_student{"Sendi Awal", "RPL"}
-	// fmt.Println("s1 before", s1.nama)
-	// fmt.Println("=================================================")
+	var s1 = func_student{"Sendi Awal", "RPL"}
+	fmt.Println("s1 before", s1.nama)
+	fmt.Println("=================================================")
 
 	// s1.methodChangeName1("Sendi 1")
 	// fmt.Println("s1 after changename1", s1.nama)
@@ -57,7 +56,6 @@ func main(){
 	// fmt.Println("s1 after changename2", s1.nama)
 	// end struct
 
-	lib.SayHello("Sendi Hadi")
 
-	mat.CallString()
+	// mat.CallString()
 }
