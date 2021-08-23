@@ -5,28 +5,6 @@ import ("fmt"
 	mat "belajar/materi"
 )
 
-type func_student struct {
-	nama string
-	kelas string
-}
-
-func (s func_student) methodSayHello(){
-	fmt.Println("Haloo :", s.nama)
-}
-
-func (s func_student) methodetGetNameAt(i int) string{
-	return strings.Split(s.nama, " ")[i-1]
-}
-
-func (s func_student) methodChangeName1(nama string){
-	fmt.Println("---> on Changename1, name changed to", nama)
-	s.nama = nama
-}
-
-func (s *func_student) methodChangeName2(nama string){
-	fmt.Println("---> on Changename1, name changed to", nama)
-	s.nama = nama
-}
 
 func main(){	
 	// mat.CallString()
