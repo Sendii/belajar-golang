@@ -20,7 +20,7 @@ func init(){
 	Student.Nama = "John Wick"
     Student.Kelas = "RPL"
 
-	fmt.Println("COmpleted exported")
+	fmt.Println("Completed exported")
 }
 
 func (s func_student) methodSayHello(){
