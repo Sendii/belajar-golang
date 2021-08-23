@@ -1,7 +1,6 @@
 package main
 
-import ("fmt"
-	"strings"
+import (
 	mat "belajar/materi"
 )
 
@@ -19,21 +18,12 @@ func main(){
 	// mat.CallStudentStruct2()
 	// mat.CallPersonStruct3()
 	// mat.CallPersonStruct4()
-	// mat.CallPersonStruct5()
-
-	// start struct
-	var s1 = func_student{"Sendi Awal", "RPL"}
-	fmt.Println("s1 before", s1.nama)
-	fmt.Println("=================================================")
-
-	// s1.methodChangeName1("Sendi 1")
-	// fmt.Println("s1 after changename1", s1.nama)
-	// fmt.Println("=================================================")
-
-	// s1.methodChangeName2("Sendi 2")
-	// fmt.Println("s1 after changename2", s1.nama)
-	// end struct
+	// mat.CallPersonStruct5()	
 
 
 	// mat.CallString()
+	mat.CallStruct()
+
+	// call with go run main.go partial.go
+	// CallFuncRoot("Sendi")
 }
