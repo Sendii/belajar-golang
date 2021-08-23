@@ -10,6 +10,19 @@ type func_student struct {
 	kelas string
 }
 
+var Student = struct {
+	Nama string
+	Kelas string
+}{}
+
+// function yg pertama kali dipanggil ketika diload
+func init(){
+	Student.Nama = "John Wick"
+    Student.Kelas = "RPL"
+
+	fmt.Println("COmpleted exported")
+}
+
 func (s func_student) methodSayHello(){
 	fmt.Println("Haloo :", s.nama)
 }

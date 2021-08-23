@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	mat "belajar/materi"
 )
 
@@ -22,7 +23,9 @@ func main(){
 
 
 	// mat.CallString()
-	mat.CallStruct()
+	// mat.CallStruct()
+	fmt.Printf("Nama  : %s\n", mat.Student.Nama)
+    fmt.Printf("Kelas : %s\n", mat.Student.Kelas)
 
 	// call with go run main.go partial.go
 	// CallFuncRoot("Sendi")
