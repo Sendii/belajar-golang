@@ -62,6 +62,8 @@ func main(){
 	// =========================== END ==============================
 
 	// ====================== GO ROUTINE ============================
-	mat.GoRoutPrint()
+	// mat.GoRoutPrint()
+	// mat.GoRoutChannel()
+	mat.GoRoutChannelParam()
 
 }
