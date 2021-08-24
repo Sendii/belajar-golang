@@ -83,5 +83,10 @@ func main(){
 	// FILE
 	// mat.CreateFileTxt()
 	// mat.DeleteFile()
-	mat.ActivWebsite()
+
+	// web
+	// mat.ActivWebsite()
+	mat.UrlParse()
+
+
 }
