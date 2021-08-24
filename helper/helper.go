@@ -55,7 +55,10 @@ func BulanIndo(now time.Time)string{
 	return month
 }
 
+func TahunIndo(now time.Time)int{
+	return int(now.Year())
+}
+
 func TglIndo(date time.Time)(string, string, int){
-	now := int(time.Now().Year())
-	return HariIndo(date), BulanIndo(date), now
+	return HariIndo(date), BulanIndo(date), TahunIndo(date)
 }
