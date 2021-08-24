@@ -77,6 +77,7 @@ func main(){
 	// mat.TglSekarang()
 
 	// STRING
-	mat.ReplaceText("Mgngga")
+	// mat.ReplaceText("Mgngga")
+	mat.EncodeText("John Doe")
 
 }
