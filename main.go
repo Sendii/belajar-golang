@@ -69,7 +69,8 @@ func main(){
 	// ERROR
 	// mat.CallErrorAndRecover()
 
-	//random number
-	mat.RandomNumber()
+	//random
+	// mat.RandomNumber()
+	mat.CustRandom("string", 5)
 
 }
