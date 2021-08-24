@@ -71,6 +71,9 @@ func main(){
 
 	//random
 	// mat.RandomNumber()
-	mat.CustRandom("string", 5)
+	// mat.CustRandom("string", 5)
+
+	//TANGGAL
+	mat.TglSekarang()
 
 }
