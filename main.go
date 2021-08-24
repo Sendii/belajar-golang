@@ -1,7 +1,7 @@
 package main
 
 import (
-	// "fmt"
+	"fmt"
 	mat "belajar/materi"
 )
 
@@ -64,6 +64,19 @@ func main(){
 	// ====================== GO ROUTINE ============================
 	// mat.GoRoutPrint()
 	// mat.GoRoutChannel()
-	mat.GoRoutChannelParam()
+	// mat.GoRoutChannelParam()
+	// =========================== END ==============================
+
+	// ERROR
+	var nama string 
+	fmt.Print("Masukkan nama anda : ")
+	fmt.Scanln(&nama)
+
+	if valid, err := mat.Validate(nama); valid{
+		fmt.Println("Haloo", nama)
+	}else{
+		panic(err.Error())
+		fmt.Println("end~")
+	}
 
 }
