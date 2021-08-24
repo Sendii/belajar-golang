@@ -86,7 +86,12 @@ func main(){
 
 	// web
 	// mat.ActivWebsite()
-	mat.UrlParse()
+	// mat.UrlParse()
+
+	// JSON
+	// mat.CallJson()
+	// mat.CallJsonArray()
+	mat.CallApiSiswa()
 
 
 }
