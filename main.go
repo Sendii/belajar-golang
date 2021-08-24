@@ -78,6 +78,9 @@ func main(){
 
 	// STRING
 	// mat.ReplaceText("Mgngga")
-	mat.EncodeText("John Doe")
+	// mat.EncodeText("John Doe")
 
+	// FILE
+	// mat.CreateFileTxt()
+	// mat.DeleteFile()
 }
