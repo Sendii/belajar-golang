@@ -74,6 +74,9 @@ func main(){
 	// mat.CustRandom("string", 5)
 
 	//TANGGAL
-	mat.TglSekarang()
+	// mat.TglSekarang()
+
+	// STRING
+	mat.ReplaceText("Mgngga")
 
 }
