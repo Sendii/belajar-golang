@@ -1,10 +1,10 @@
 package helper
 import "time"
 
-func HariIndo()string{
-	now := int(time.Now().Weekday())
+func HariIndo(now time.Time)string{
+	sample := int(now.Weekday())
 	var day string
-	switch now {
+	switch sample {
 	case 1:
 		day = "Senin"
 	case 2:
@@ -23,10 +23,10 @@ func HariIndo()string{
 	return day
 }
 
-func BulanIndo()string{
-	now := int(time.Now().Month())
+func BulanIndo(now time.Time)string{
+	sample := int(now.Month())
 	var month string
-	switch now {
+	switch sample {
 	case 1:
 		month = "Januari"
 	case 2:
@@ -55,7 +55,7 @@ func BulanIndo()string{
 	return month
 }
 
-func TglIndo()(string, string, int){
+func TglIndo(date time.Time)(string, string, int){
 	now := int(time.Now().Year())
-	return HariIndo(), BulanIndo(), now
+	return HariIndo(date), BulanIndo(date), now
 }
