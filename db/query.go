@@ -60,7 +60,7 @@ func SqlDetail(id string){ //select menggunakan .queryRow
 		return
 	}
 
-	fmt.Printf("Nama : %s\nUmur : %d\n", res.Nama, res.Umur)
+	fmt.Printf("Nama : %s\nUmur : %d\nJurusan : %s\n\n", res.Nama, res.Umur, res.Jurusan)
 }
 
 func SqlPrepare() { //reuse sql
@@ -90,7 +90,7 @@ func SqlPrepare() { //reuse sql
 	fmt.Printf("Nama : %s\nUmur: %d\nJurusan : %s\n", r3.Nama, r3.Umur, r3.Jurusan)
 }
 
-func SqlInsert(){
+func SqlAction(act string){
 	db, err := ConenctDB()
 	if err != nil{
 		fmt.Println(err.Error())
@@ -98,10 +98,27 @@ func SqlInsert(){
 	}
 	defer db.Close()
 
-	_, err = db.Exec("insert into siswa values(?, ?, ?, ?)", "Z001", "Rizky", 18, "Sejarah")
-	if err != nil{
-		fmt.Println(err.Error())
-		return
+	if act == "insert"{
+		_, err = db.Exec("insert into siswa values(?, ?, ?, ?)", "Z001", "Rizky", 18, "Sejarah")
+		if err != nil{
+			fmt.Println(err.Error())
+			return
+		}
+		fmt.Println("Insert berhasil")
+	}else if act == "update"{
+		_, err = db.Exec("update siswa set nama = ?, umur = ?, jurusan = ? where id = ?", "Rizky update", 19, "Sejarah update", "Z001")
+		if err != nil{
+			fmt.Println(err.Error())
+			return
+		}
+		fmt.Println("Update berhasil")
+	}else if act == "delete"{
+		_, err = db.Exec("delete from siswa where id = ?", "Z001")
+		if err != nil{
+			fmt.Println(err.Error())
+			return
+		}
+		fmt.Println("Hapus berhasil")
 	}
-	fmt.Println("Insert berhasil")
+	fmt.Println("========================")
 }

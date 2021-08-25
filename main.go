@@ -96,8 +96,11 @@ func main(){
 
 	// DATABASE
 	// db.SqlSelect()
+	db.SqlAction("delete")
+	db.SqlAction("insert")
 	db.SqlDetail("Z001")
-	// db.SqlInsert()
+	db.SqlAction("update")
+	db.SqlDetail("Z001")
 	// db.SqlPrepare()
 
 
