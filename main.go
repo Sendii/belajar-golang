@@ -16,7 +16,7 @@ func main(){
 	// mat.CallArray()
 	// mat.CallArrayMultidimensional()
 	// mat.CallMapMonth()
-    // mat.PrintMessage([]string{"John", "Doe"}, "RPL")
+	// mat.PrintMessage([]string{"John", "Doe"}, "RPL")
 	// mat.CallPointer()
 	// mat.CallString()
 	// =========================== END ==============================
@@ -33,8 +33,8 @@ func main(){
 
 	// ==================== CALL FUNC INIT ==========================
 	// fmt.Printf("Nama  : %s\n", mat.Student.Nama)
-    // fmt.Printf("Kelas : %s\n", mat.Student.Kelas)
-    // =========================== END ==============================
+	// fmt.Printf("Kelas : %s\n", mat.Student.Kelas)
+	// =========================== END ==============================
 	// call with go run main.go partial.go
 	// CallFuncRoot("Sendi")
 
@@ -107,8 +107,21 @@ func main(){
 
 	// PATTERN
 	var query patt.PQuery
-	query = patt.PSiswa{"A001", "Rizki", 19, "Inggris"}
-	fmt.Println("hasilnya : ", query.Create())
 
+	query = patt.PSiswa{"A001", "Rizki", 19, "Inggris"}
+	fmt.Println("show : ", query.Show())
+
+	if query.Show() {
+		query = patt.PSiswa{"A001", "Rizki", 19, "Inggris"}
+		fmt.Println("delete : ", query.Delete())
+	}	
+
+	query = patt.PSiswa{"A001", "Rizki", 19, "Inggris"}
+	fmt.Println("create : ", query.Create())
+
+	if query.Show() {
+		query = patt.PSiswa{"A001", "Rizki Update", 20, "Inggris Update"}
+		fmt.Println("update : ", query.Update())
+	}	
 
 }
