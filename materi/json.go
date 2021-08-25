@@ -112,6 +112,9 @@ func getUser(w http.ResponseWriter, r *http.Request){
 				}
 				w.Write(res)
 				return
+			}else if id == ""{
+				http.Error(w, "Masukkan id siswa nya.", http.StatusBadRequest)
+				return
 			}
 		}
 		http.Error(w, "Siswa tidak ditemukan", http.StatusBadRequest)
