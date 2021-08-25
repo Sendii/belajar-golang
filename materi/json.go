@@ -68,46 +68,75 @@ var dataSiswa = []ApiSiswa{
 	ApiSiswa{"A004", "wijaya", 23},
 }
 
+type Login struct {
+	Username string
+	Password string
+}
+
+var credential = Login{"sendi", "8888"}
+func attemptLogin(u string, p string) (string, bool){
+	if u == "" && p == "" {
+		return "Username dan Password tidak boleh kosong", false
+	}else if u == "" {
+		return "Username tidak boleh kosong", false
+	}else if p == "" {
+		return "Password tidak boleh kosong", false
+	}else if u == credential.Username && p == credential.Password {
+		return "", true
+	}else{
+		return "Ada kesalahan", false
+	}
+}
+
 func getUsers(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
 
+	var user, password = r.FormValue("username"), r.FormValue("password")
+
 	if r.Method == "POST"{
 		var res, err = json.Marshal(dataSiswa)
-
-		if err != nil {
-			http.Error(w, err.Error(), http.StatusInternalServerError)
+		var msg, errmsg = attemptLogin(user, password)
+		if !errmsg {
+			http.Error(w, msg, http.StatusUnauthorized)
+		}else{
+			if err != nil {
+				http.Error(w, err.Error(), http.StatusInternalServerError)
+				return
+			}
+			w.Write(res)
 			return
 		}
-		w.Write(res)
-		return
 	}
-	http.Error(w, "", http.StatusBadRequest)
 }
 
 func getUser(w http.ResponseWriter, r *http.Request){
 	w.Header().Set("Content-Type", "application/json")
 
 	if r.Method == "POST"{
-		var id = r.FormValue("id") //get id from form-data postman
+		var id, user, password = r.FormValue("id"), r.FormValue("username"), r.FormValue("password") //get id from form-data postman
 		var res []byte
 		var err error
 
-		for _, siswa := range dataSiswa {
-			if siswa.ID == id {
-				res, err = json.Marshal(siswa)
+		var msg, errmsg = attemptLogin(user, password)
+		if !errmsg {
+			http.Error(w, msg, http.StatusUnauthorized)
+		}else{
+			for _, siswa := range dataSiswa {
+				if siswa.ID == id {
+					res, err = json.Marshal(siswa)
 
-				if err != nil {
-					http.Error(w, err.Error(), http.StatusInternalServerError)
+					if err != nil {
+						http.Error(w, err.Error(), http.StatusInternalServerError)
+						return
+					}
+					w.Write(res)
+					return
+				}else{
+					http.Error(w, "Siswa tidak ditemukan", http.StatusBadRequest)
 					return
 				}
-				w.Write(res)
-				return
-			}else{
-				http.Error(w, "Siswa tidak ditemukan", http.StatusBadRequest)
-				return
 			}
-		}
-		http.Error(w, "", http.StatusBadRequest)
+		}		
 	}
 }
 
@@ -116,5 +145,5 @@ func CallApiSiswa(){
 	http.HandleFunc("/user", getUser)
 
 	fmt.Println("starting web server at http://localhost:1020")
-	http.ListenAndServe(":1020", nil)
-}
+		http.ListenAndServe(":1020", nil)
+	}
