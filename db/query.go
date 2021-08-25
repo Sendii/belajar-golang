@@ -42,7 +42,7 @@ func SqlSelect(){ //select menggunakan .query
 	}
 }
 
-func SqlDetail(){ //select menggunakan .queryRow
+func SqlDetail(id string){ //select menggunakan .queryRow
 	db, err := ConenctDB()
 	if err != nil {
 		fmt.Println(err.Error())
@@ -51,7 +51,6 @@ func SqlDetail(){ //select menggunakan .queryRow
 	defer db.Close()
 
 	var res = SiswaSql{}
-	var id  = "E001"
 	err = db.
 	QueryRow("select nama, umur, jurusan from siswa where id = ?", id).
 	Scan(&res.Nama, &res.Umur, &res.Jurusan) // yg di select, kudu dipanggil semua biar ga error
@@ -89,4 +88,20 @@ func SqlPrepare() { //reuse sql
 	var r3 = SiswaSql{}
 	stmt.QueryRow("B002").Scan(&r3.Nama, &r3.Umur, &r3.Jurusan)
 	fmt.Printf("Nama : %s\nUmur: %d\nJurusan : %s\n", r3.Nama, r3.Umur, r3.Jurusan)
+}
+
+func SqlInsert(){
+	db, err := ConenctDB()
+	if err != nil{
+		fmt.Println(err.Error())
+		return
+	}
+	defer db.Close()
+
+	_, err = db.Exec("insert into siswa values(?, ?, ?, ?)", "Z001", "Rizky", 18, "Sejarah")
+	if err != nil{
+		fmt.Println(err.Error())
+		return
+	}
+	fmt.Println("Insert berhasil")
 }

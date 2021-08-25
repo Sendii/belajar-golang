@@ -96,8 +96,9 @@ func main(){
 
 	// DATABASE
 	// db.SqlSelect()
-	// db.SqlDetail()
-	db.SqlPrepare()
+	db.SqlDetail("Z001")
+	// db.SqlInsert()
+	// db.SqlPrepare()
 
 
 }
