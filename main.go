@@ -1,7 +1,8 @@
 package main
 
 import (
-	mat "belajar/materi"
+	// mat "belajar/materi"
+	"belajar/db"
 )
 
 
@@ -91,7 +92,9 @@ func main(){
 	// JSON
 	// mat.CallJson()
 	// mat.CallJsonArray()
-	mat.CallApiSiswa()
+	// mat.CallApiSiswa()
+	// db.SqlSelect()
+	db.SqlDetail()
 
 
 }
