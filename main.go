@@ -93,8 +93,11 @@ func main(){
 	// mat.CallJson()
 	// mat.CallJsonArray()
 	// mat.CallApiSiswa()
+
+	// DATABASE
 	// db.SqlSelect()
-	db.SqlDetail()
+	// db.SqlDetail()
+	db.SqlPrepare()
 
 
 }
