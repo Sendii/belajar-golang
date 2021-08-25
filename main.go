@@ -1,8 +1,10 @@
 package main
 
 import (
+	"fmt"
 	// mat "belajar/materi"
-	"belajar/db"
+	// "belajar/db"
+	patt "belajar/pattern"
 )
 
 
@@ -96,12 +98,17 @@ func main(){
 
 	// DATABASE
 	// db.SqlSelect()
-	db.SqlAction("delete")
-	db.SqlAction("insert")
-	db.SqlDetail("Z001")
-	db.SqlAction("update")
-	db.SqlDetail("Z001")
+	// db.SqlAction("delete")
+	// db.SqlAction("insert")
+	// db.SqlDetail("Z001")
+	// db.SqlAction("update")
+	// db.SqlDetail("Z001")
 	// db.SqlPrepare()
+
+	// PATTERN
+	var query patt.PQuery
+	query = patt.PSiswa{"A001", "Rizki", 19, "Inggris"}
+	fmt.Println("hasilnya : ", query.Create())
 
 
 }
